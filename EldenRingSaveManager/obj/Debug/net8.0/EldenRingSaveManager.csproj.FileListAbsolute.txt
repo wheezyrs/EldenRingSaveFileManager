@@ -1,0 +1,14 @@
+C:\Users\Wheezy\source\repos\EldenRingSaveManager\EldenRingSaveManager\bin\Debug\net8.0\EldenRingSaveManager.exe
+C:\Users\Wheezy\source\repos\EldenRingSaveManager\EldenRingSaveManager\bin\Debug\net8.0\EldenRingSaveManager.deps.json
+C:\Users\Wheezy\source\repos\EldenRingSaveManager\EldenRingSaveManager\bin\Debug\net8.0\EldenRingSaveManager.runtimeconfig.json
+C:\Users\Wheezy\source\repos\EldenRingSaveManager\EldenRingSaveManager\bin\Debug\net8.0\EldenRingSaveManager.dll
+C:\Users\Wheezy\source\repos\EldenRingSaveManager\EldenRingSaveManager\bin\Debug\net8.0\EldenRingSaveManager.pdb
+C:\Users\Wheezy\source\repos\EldenRingSaveManager\EldenRingSaveManager\obj\Debug\net8.0\EldenRingSaveManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Wheezy\source\repos\EldenRingSaveManager\EldenRingSaveManager\obj\Debug\net8.0\EldenRingSaveManager.AssemblyInfoInputs.cache
+C:\Users\Wheezy\source\repos\EldenRingSaveManager\EldenRingSaveManager\obj\Debug\net8.0\EldenRingSaveManager.AssemblyInfo.cs
+C:\Users\Wheezy\source\repos\EldenRingSaveManager\EldenRingSaveManager\obj\Debug\net8.0\EldenRingSaveManager.csproj.CoreCompileInputs.cache
+C:\Users\Wheezy\source\repos\EldenRingSaveManager\EldenRingSaveManager\obj\Debug\net8.0\EldenRingSaveManager.dll
+C:\Users\Wheezy\source\repos\EldenRingSaveManager\EldenRingSaveManager\obj\Debug\net8.0\refint\EldenRingSaveManager.dll
+C:\Users\Wheezy\source\repos\EldenRingSaveManager\EldenRingSaveManager\obj\Debug\net8.0\EldenRingSaveManager.pdb
+C:\Users\Wheezy\source\repos\EldenRingSaveManager\EldenRingSaveManager\obj\Debug\net8.0\EldenRingSaveManager.genruntimeconfig.cache
+C:\Users\Wheezy\source\repos\EldenRingSaveManager\EldenRingSaveManager\obj\Debug\net8.0\ref\EldenRingSaveManager.dll
