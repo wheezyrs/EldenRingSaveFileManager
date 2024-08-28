@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Wheezy\\source\\repos\\EldenRingSaveManager\\EldenRingSaveManager\\EldenRingSaveManager.csproj": {}
+    "E:\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\EldenRingSaveManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Wheezy\\source\\repos\\EldenRingSaveManager\\EldenRingSaveManager\\EldenRingSaveManager.csproj": {
+    "E:\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\EldenRingSaveManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Wheezy\\source\\repos\\EldenRingSaveManager\\EldenRingSaveManager\\EldenRingSaveManager.csproj",
+        "projectUniqueName": "E:\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\EldenRingSaveManager.csproj",
         "projectName": "EldenRingSaveManager",
-        "projectPath": "C:\\Users\\Wheezy\\source\\repos\\EldenRingSaveManager\\EldenRingSaveManager\\EldenRingSaveManager.csproj",
+        "projectPath": "E:\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\EldenRingSaveManager.csproj",
         "packagesPath": "C:\\Users\\Wheezy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Wheezy\\source\\repos\\EldenRingSaveManager\\EldenRingSaveManager\\obj\\",
+        "outputPath": "E:\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

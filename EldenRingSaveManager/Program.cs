@@ -22,6 +22,7 @@ namespace EldenRingSaveManager
             try
             {
                 Console.Clear();
+                Console.WriteLine("App made by: wheezyrs");
                 string text = $"Backup directory: {backUpDirectory.Substring(0,backUpDirectory.Length-1)}";
                 Console.WriteLine(text);
                 foreach (char c in text)
