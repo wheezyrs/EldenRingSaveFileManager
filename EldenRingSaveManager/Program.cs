@@ -4,56 +4,42 @@ namespace EldenRingSaveManager
 {
     internal class Program
     {
-        
-        static string username = Environment.UserName;
-        static string backUpDirectory = @$"C:\Users\{username}\AppData\Roaming\EldenRingSaveBackUp\";
+
+        static string currentUserName = Environment.UserName;
+        static string backupDirectoryPath = @$"C:\Users\{currentUserName}\AppData\Roaming\EldenRingSaveBackUp\";
 
         static void Main(string[] args)
         {
-            if (!Directory.Exists(backUpDirectory))
+            if (!Directory.Exists(backupDirectoryPath))
             {
-                Directory.CreateDirectory(backUpDirectory);
+                Directory.CreateDirectory(backupDirectoryPath);
             }
-            Menu();
+            ShowMenu();
         }
 
-        static void Menu()
+        static void ShowMenu()
         {
             try
             {
                 Console.Clear();
-                Console.WriteLine("App made by: wheezyrs");
-                string text = $"Backup directory: {backUpDirectory.Substring(0,backUpDirectory.Length-1)}";
-                Console.WriteLine(text);
-                foreach (char c in text)
-                {
-                    Console.Write("-");
-                }
-                Console.WriteLine();
-                Console.WriteLine("Options:");
-                Console.WriteLine("1.Make a copy of your .sl2 save into your Backup directory");
-                Console.WriteLine("2.Make a copy of your .co2 save into your Backup directory");
-                Console.WriteLine("3.Add .co2 in your savefile directory");
-                Console.WriteLine("4.Add .sl2 in your savefile directory");
-                Console.WriteLine("5.Exit");
-                Console.Write("Your choice: ");
+                DisplayMenuOptions();
 #pragma warning disable CS8600
-                string input = Console.ReadLine();
+                string userInput = Console.ReadLine();
 #pragma warning restore CS8600
-                int choice = Convert.ToInt32(input);
-                switch (choice)
+                int selectedOption = Convert.ToInt32(userInput);
+                switch (selectedOption)
                 {
                     case 1:
-                        MakeCopyOfSaveFile();
+                        BackupSaveFile();
                         break;
                     case 2:
-                        MakeCopyOfSaveFile(true);
+                        BackupSaveFile(true);
                         break;
                     case 3:
-                        DuplicateFile();
+                        DuplicateSaveFile();
                         break;
                     case 4:
-                        DuplicateFile(true);
+                        DuplicateSaveFile(true);
                         break;
                     case 5:
                         Environment.Exit(0);
@@ -65,110 +51,183 @@ namespace EldenRingSaveManager
             }
             catch (Exception ex)
             {
+                Console.Clear() ;
                 Console.WriteLine(ex.Message);
-                Thread.Sleep(3000);
-                Menu();
+                Thread.Sleep(1500);
+                Console.Write("Press anything to continue...");
+                Console.ReadKey();
+                ShowMenu();
             }
         }
 
-        static void DuplicateFile(bool isCo2 = false)
+        private static void DisplayMenuOptions()
         {
-            GetSaveType(isCo2, out string firstFile, out string firstBakFile);
-            GetSaveType(!isCo2, out string secondFile, out string secondBakFile);
-            GetEldenRingDirectory(out string eldenRingDirectory, out bool isFound);
-            string firstFilePath = @$"{eldenRingDirectory}\{firstFile}";
-            string firstBakFilePath = $@"{eldenRingDirectory}\{firstBakFile}";
-            string secondFilePath = $@"{eldenRingDirectory}\{secondFile}";
-            string secondBakFilePath = $@"{eldenRingDirectory}\{secondBakFile}";
-            if (!isFound)
+            Console.WriteLine(ColoredText("Elden Ring Save Manager by wheezyrs", ConsoleColor.Green));
+
+            string text = $"Backup directory: {backupDirectoryPath.Substring(0, backupDirectoryPath.Length - 1)}\n";
+            Console.WriteLine(ColoredText(text, ConsoleColor.Cyan));
+
+            Console.Write(ColoredText(new string('-', text.Length), ConsoleColor.Yellow));
+
+            Console.WriteLine(ColoredText("\n\nPlease choose an option:\n", ConsoleColor.White));
+
+            //#1
+            Console.WriteLine(
+                ColoredText("1. ", ConsoleColor.Green) +
+                ColoredText("Backup your ", ConsoleColor.Yellow) +
+                ColoredText(".sl2", ConsoleColor.DarkYellow) +
+                ColoredText(" save file to the Backup", ConsoleColor.Yellow) +
+                ColoredText(" Directory", ConsoleColor.DarkYellow)
+            );
+
+
+            ///////////////////////////////////////////////////////////////////////
+            //#2
+            Console.WriteLine(
+                ColoredText("2. ", ConsoleColor.Green) +
+                ColoredText("Backup your ", ConsoleColor.Yellow) +
+                ColoredText(".co2", ConsoleColor.DarkYellow) +
+                ColoredText(" save file to the Backup", ConsoleColor.Yellow) +
+                ColoredText(" Directory", ConsoleColor.DarkYellow)
+            );
+            Console.WriteLine();
+
+
+
+            ///////////////////////////////////////////////////////////////////////
+            //#3
+            Console.WriteLine(
+            ColoredText("3. ", ConsoleColor.Green) +
+                ColoredText("Duplicate ", ConsoleColor.Cyan) +
+                ColoredText(".sl2", ConsoleColor.DarkYellow) +
+                ColoredText(" save file and rename the copy to ", ConsoleColor.Cyan) +
+                ColoredText(".co2", ConsoleColor.DarkYellow) +
+                ColoredText(" in the game directory", ConsoleColor.Cyan)
+
+            ///////////////////////////////////////////////////////////////////////
+
+            //#4
+            );
+            Console.WriteLine(
+                ColoredText("4. ", ConsoleColor.Green) +
+                ColoredText("Duplicate ", ConsoleColor.Cyan) +
+                ColoredText(".co2", ConsoleColor.DarkYellow) +
+                ColoredText(" save file and rename the copy to ", ConsoleColor.Cyan) +
+                ColoredText(".sl2", ConsoleColor.DarkYellow) +
+                ColoredText(" in the game directory", ConsoleColor.Cyan)
+            );
+            Console.WriteLine();
+
+
+
+            ///////////////////////////////////////////////////////////////////////
+            //#5
+            Console.WriteLine(ColoredText("5. ", ConsoleColor.DarkRed) + ColoredText("Exit", ConsoleColor.Red));
+
+            Console.WriteLine();
+            Console.Write(ColoredText("Your choice: ", ConsoleColor.Magenta));
+            Console.ResetColor();
+        }
+
+
+        static void DuplicateSaveFile(bool isCo2 = false)
+        {
+            GetSaveFileNames(isCo2, out string sourceFileName, out string sourceBakFileName);
+            GetSaveFileNames(!isCo2, out string targetFileName, out string targetBakFileName);
+            FindEldenRingSaveDirectory(out string eldenRingSaveDirectory, out bool directoryExists);
+            string sourceFilePath = @$"{eldenRingSaveDirectory}\{sourceFileName}";
+            string sourceBakFilePath = $@"{eldenRingSaveDirectory}\{sourceBakFileName}";
+            string targetFilePath = $@"{eldenRingSaveDirectory}\{targetFileName}";
+            string targetBakFilePath = $@"{eldenRingSaveDirectory}\{targetBakFileName}";
+            if (!directoryExists)
             {
                 Console.WriteLine("Directory is not found.");
             }
             else
             {
-                if (File.Exists(firstFilePath))
+                if (File.Exists(sourceFilePath))
                 {
-                    File.Copy(firstFilePath, secondFilePath, false);
+                    File.Copy(sourceFilePath, targetFilePath, false);
 
                 }
                 else
                 {
-                    Console.WriteLine($"{firstFilePath} is not found");
+                    Console.WriteLine($"{sourceFilePath} is not found");
                 }
-                if (File.Exists(secondFilePath))
+                if (File.Exists(targetFilePath))
                 {
-                    File.Copy(secondFilePath, secondBakFilePath, false);
+                    File.Copy(targetFilePath, targetBakFilePath, false);
                 }
                 else
                 {
-                    Console.WriteLine(@$"{eldenRingDirectory}\{firstBakFile} is not found");
+                    Console.WriteLine(@$"{eldenRingSaveDirectory}\{sourceBakFileName} is not found");
                 }
             }
             Console.Write("Press anything to continue....");
             Console.ReadKey();
-            Menu();
+            ShowMenu();
         }
 
-        static void MakeCopyOfSaveFile(bool isCo2 = false)
+        static void BackupSaveFile(bool isCo2 = false)
         {
-            string path = backUpDirectory;
-            string bakPath = path;
-            GetSaveType(isCo2, out string file, out string bakFile);
-            path += file;
-            bakPath += bakFile;
-            GetEldenRingDirectory(out string eldenRingDirectory, out bool isFound);
-            if (!isFound)
+            string filePath = backupDirectoryPath;
+            string bakFilePath = filePath;
+            GetSaveFileNames(isCo2, out string fileName, out string bakFileName);
+            filePath += fileName;
+            bakFilePath += bakFileName;
+            FindEldenRingSaveDirectory(out string eldenRingSaveDirectory, out bool directoryFound);
+            if (!directoryFound)
             {
                 Console.WriteLine("Directory is not found.");
             }
 
             else
             {
-                if (File.Exists(@$"{eldenRingDirectory}\{file}"))
+                if (File.Exists(@$"{eldenRingSaveDirectory}\{fileName}"))
                 {
-                    File.Copy($@"{eldenRingDirectory}\{file}", path, true);
+                    File.Copy($@"{eldenRingSaveDirectory}\{fileName}", filePath, true);
                 }
                 else
                 {
-                    Console.WriteLine(@$"{eldenRingDirectory}\{file} is not found");
+                    Console.WriteLine(@$"{eldenRingSaveDirectory}\{fileName} is not found");
                 }
-                if (File.Exists($@"{eldenRingDirectory}\{bakFile}"))
+                if (File.Exists($@"{eldenRingSaveDirectory}\{bakFileName}"))
                 {
-                    File.Copy($@"{eldenRingDirectory}\{bakFile}", bakPath, true);
+                    File.Copy($@"{eldenRingSaveDirectory}\{bakFileName}", bakFilePath, true);
                 }
                 else
                 {
-                    Console.WriteLine($@"{eldenRingDirectory}\{bakFile} is not found");
+                    Console.WriteLine($@"{eldenRingSaveDirectory}\{bakFileName} is not found");
                 }
                 Console.WriteLine("Files copied successfully!");
             }
             Console.Write("Press anything to continue....");
             Console.ReadKey();
-            Menu();
+            ShowMenu();
 
         }
 
-        private static void GetEldenRingDirectory(out string eldenRingDirectory, out bool isFound)
+        private static void FindEldenRingSaveDirectory(out string eldenRingSaveDirectory, out bool directoryFound)
         {
             string[] subDirectories = Directory.GetDirectories(@$"C:\Users\Wheezy\AppData\Roaming\EldenRing");
-            eldenRingDirectory = string.Empty;
-            isFound = FindSaveFileLocation(subDirectories, ref eldenRingDirectory);
+            eldenRingSaveDirectory = string.Empty;
+            directoryFound = LocateSaveFileDirectory(subDirectories, ref eldenRingSaveDirectory);
         }
 
-        static void GetSaveType(bool isCo2, out string file, out string bakFile)
+        static void GetSaveFileNames(bool isCo2, out string fileName, out string bakFileName)
         {
             if (!isCo2)
             {
-                file = "ER0000.sl2";
+                fileName = "ER0000.sl2";
             }
             else
             {
-                file = "ER0000.co2";
+                fileName = "ER0000.co2";
             }
-            bakFile = file + ".bak";
+            bakFileName = fileName + ".bak";
         }
 
-        static bool FindSaveFileLocation(string[] subDirectories, ref string eldenRingDirectory)
+        static bool LocateSaveFileDirectory(string[] subDirectories, ref string eldenRingDirectory)
         {
             foreach (string directory in subDirectories)
             {
@@ -183,5 +242,29 @@ namespace EldenRingSaveManager
 
             return false;
         }
+
+
+        /// <summary>
+        /// Writes the specified text to the console in the specified foreground color and resets the color afterward.
+        /// </summary>
+        /// <param name="text">The text to be written to the console.</param>
+        /// <param name="color">The foreground color to use for the text.</param>
+        /// <returns>
+        /// An empty string, as the text is directly written to the console, and the return value is only for convenience in formatting.
+        /// </returns>
+        /// <example>
+        /// <code>
+        /// Console.WriteLine(ColoredText("This is green text", ConsoleColor.Green));
+        /// </code>
+        /// This will output "This is green text" in green color in the console.
+        /// </example>
+        static string ColoredText(string text, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(text);
+            Console.ResetColor();
+            return "";
+        }
+
     }
 }
