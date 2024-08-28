@@ -22,8 +22,14 @@ namespace EldenRingSaveManager
             try
             {
                 Console.Clear();
-                Console.WriteLine($"Backup directory: {backUpDirectory}");
-                Console.WriteLine("Options");
+                string text = $"Backup directory: {backUpDirectory.Substring(0,backUpDirectory.Length-1)}";
+                Console.WriteLine(text);
+                foreach (char c in text)
+                {
+                    Console.Write("-");
+                }
+                Console.WriteLine();
+                Console.WriteLine("Options:");
                 Console.WriteLine("1.Make a copy of your .sl2 save into your Backup directory");
                 Console.WriteLine("2.Make a copy of your .co2 save into your Backup directory");
                 Console.WriteLine("3.Add .co2 in your savefile directory");
@@ -36,9 +42,6 @@ namespace EldenRingSaveManager
                 int choice = Convert.ToInt32(input);
                 switch (choice)
                 {
-                    case 0:
-                        Environment.Exit(0);
-                        break;
                     case 1:
                         MakeCopyOfSaveFile();
                         break;
@@ -50,6 +53,9 @@ namespace EldenRingSaveManager
                         break;
                     case 4:
                         DuplicateFile(true);
+                        break;
+                    case 5:
+                        Environment.Exit(0);
                         break;
                     default:
                         throw new Exception("Invalid choice.");
