@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{E220F641-ED83-403D-8F31-1DCED5286712}|EldenRingSaveManager\\EldenRingSaveManager.csproj|e:\\github\\eldenringsavefilemanager\\eldenringsavemanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E220F641-ED83-403D-8F31-1DCED5286712}|EldenRingSaveManager\\EldenRingSaveManager.csproj|solutionrelative:eldenringsavemanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E220F641-ED83-403D-8F31-1DCED5286712}|EldenRingSaveManager\\EldenRingSaveManager.csproj|e:\\github\\eldenringsavefilemanager\\eldenringsavemanager\\obj\\debug\\net8.0\\eldenringsavemanager.assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E220F641-ED83-403D-8F31-1DCED5286712}|EldenRingSaveManager\\EldenRingSaveManager.csproj|solutionrelative:eldenringsavemanager\\obj\\debug\\net8.0\\eldenringsavemanager.assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EldenRingSaveManager.AssemblyInfo.cs",
+              "DocumentMoniker": "E:\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\obj\\Debug\\net8.0\\EldenRingSaveManager.AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "EldenRingSaveManager\\obj\\Debug\\net8.0\\EldenRingSaveManager.AssemblyInfo.cs",
+              "ToolTip": "E:\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\obj\\Debug\\net8.0\\EldenRingSaveManager.AssemblyInfo.cs",
+              "RelativeToolTip": "EldenRingSaveManager\\obj\\Debug\\net8.0\\EldenRingSaveManager.AssemblyInfo.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T17:43:25.858Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +41,7 @@
               "RelativeDocumentMoniker": "EldenRingSaveManager\\Program.cs",
               "ToolTip": "E:\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\Program.cs",
               "RelativeToolTip": "EldenRingSaveManager\\Program.cs",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAhwGYAAAAeAAAA",
+              "ViewState": "AQIAADYBAAAAAAAAAAAUwEwBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-28T20:47:13.202Z",
               "EditorCaption": ""
