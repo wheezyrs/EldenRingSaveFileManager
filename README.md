@@ -12,7 +12,7 @@ This is a simple console application designed to manage save files for the game 
 
 ## Requirements
 
-- **[NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+- [NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
 ## Installation
 
