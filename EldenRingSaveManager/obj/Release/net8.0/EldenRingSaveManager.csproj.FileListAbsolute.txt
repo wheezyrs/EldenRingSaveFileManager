@@ -1,0 +1,15 @@
+E:\GitHub\EldenRingSaveFileManager\EldenRingSaveManager\bin\Release\net8.0\EldenRingSaveManager.exe
+E:\GitHub\EldenRingSaveFileManager\EldenRingSaveManager\bin\Release\net8.0\EldenRingSaveManager.deps.json
+E:\GitHub\EldenRingSaveFileManager\EldenRingSaveManager\bin\Release\net8.0\EldenRingSaveManager.runtimeconfig.json
+E:\GitHub\EldenRingSaveFileManager\EldenRingSaveManager\bin\Release\net8.0\EldenRingSaveManager.dll
+E:\GitHub\EldenRingSaveFileManager\EldenRingSaveManager\bin\Release\net8.0\EldenRingSaveManager.pdb
+E:\GitHub\EldenRingSaveFileManager\EldenRingSaveManager\obj\Release\net8.0\EldenRingSaveManager.GeneratedMSBuildEditorConfig.editorconfig
+E:\GitHub\EldenRingSaveFileManager\EldenRingSaveManager\obj\Release\net8.0\EldenRingSaveManager.AssemblyInfoInputs.cache
+E:\GitHub\EldenRingSaveFileManager\EldenRingSaveManager\obj\Release\net8.0\EldenRingSaveManager.AssemblyInfo.cs
+E:\GitHub\EldenRingSaveFileManager\EldenRingSaveManager\obj\Release\net8.0\EldenRingSaveManager.csproj.CoreCompileInputs.cache
+E:\GitHub\EldenRingSaveFileManager\EldenRingSaveManager\obj\Release\net8.0\EldenRingSaveManager.sourcelink.json
+E:\GitHub\EldenRingSaveFileManager\EldenRingSaveManager\obj\Release\net8.0\EldenRingSaveManager.dll
+E:\GitHub\EldenRingSaveFileManager\EldenRingSaveManager\obj\Release\net8.0\refint\EldenRingSaveManager.dll
+E:\GitHub\EldenRingSaveFileManager\EldenRingSaveManager\obj\Release\net8.0\EldenRingSaveManager.pdb
+E:\GitHub\EldenRingSaveFileManager\EldenRingSaveManager\obj\Release\net8.0\EldenRingSaveManager.genruntimeconfig.cache
+E:\GitHub\EldenRingSaveFileManager\EldenRingSaveManager\obj\Release\net8.0\ref\EldenRingSaveManager.dll

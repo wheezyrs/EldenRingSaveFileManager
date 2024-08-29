@@ -1,0 +1,5 @@
+E:\Releases\net 8.0\EldenRingSaveManager.exe
+E:\Releases\net 8.0\EldenRingSaveManager.dll
+E:\Releases\net 8.0\EldenRingSaveManager.deps.json
+E:\Releases\net 8.0\EldenRingSaveManager.runtimeconfig.json
+E:\Releases\net 8.0\EldenRingSaveManager.pdb
