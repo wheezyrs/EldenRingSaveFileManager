@@ -91,12 +91,40 @@ namespace EldenRingSaveManager
             DateTime co2BakFileLastAccess = File.GetLastAccessTime(co2BakFilePath);
 
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine($"Last access of {sl2FileName} was on {sl2FileLastAccess}");
-            Console.WriteLine($"Last access of {sl2BakFileName} was on {sl2BakFileLastAccess}");
+            if (!File.Exists(sl2FilePath))
+            {
+                Console.WriteLine($"File as {sl2FileName} has not been found or does not exist!");
+            }
+            else
+            {
+                Console.WriteLine($"Last access of {sl2FileName} was on {sl2FileLastAccess}");
+            }
+            if (!File.Exists(sl2BakFilePath))
+            {
+                Console.WriteLine($"File as {sl2BakFileName} has not been found or does not exist!");
+            }
+            else
+            {
+                Console.WriteLine($"Last access of {sl2BakFileName} was on {sl2BakFileLastAccess}");
+            }
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"Last access of {co2FileName} was on {co2FileLastAccess}");
-            Console.WriteLine($"Last access of {co2BakFileName} was on {co2BakFileLastAccess}");
+            if (!File.Exists(co2FilePath))
+            {
+                Console.WriteLine($"File as {co2FileName} has not been found or does not exist!");
+            }
+            else
+            {
+                Console.WriteLine($"Last access of {co2FileName} was on {co2FileLastAccess}");
+            }
+            if (!File.Exists(co2BakFilePath))
+            {
+                Console.WriteLine($"File as {co2BakFileName} has not been found or does not exist!");
+            }
+            else
+            {
+                Console.WriteLine($"Last access of {co2BakFileName} was on {co2BakFileLastAccess}");
+            }
 
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.Write("Press anything to continue....");
@@ -234,10 +262,49 @@ namespace EldenRingSaveManager
             {
                 throw new Exception("Directory not found");
             }
-            File.Copy(sourceFilePath, targetFilePath, true);
-            Console.WriteLine($"{sourceFilePath} duplicated successfully");
-            File.Copy(sourceBakFilePath, targetBakFilePath, true);
-            Console.WriteLine($"{sourceBakFilePath} duplicated successfully");
+
+            if (!File.Exists(sourceFilePath) || !File.Exists(sourceBakFilePath))
+            {
+                Console.Clear();
+                Console.WriteLine(ColoredText("WARNING!", ConsoleColor.Red));
+                Console.WriteLine($"{sourceFileName} does not exist! Trying to fetch from the backup folder...");
+                Thread.Sleep(1000);
+                string backupSourceFilePath = $@"{backupDirectoryPath}\{sourceFileName}";
+                string backupSourceBakFilePath = $@"{backupDirectoryPath}\{sourceBakFileName}";
+                if (File.Exists(backupSourceFilePath) || File.Exists(backupSourceBakFilePath))
+                {
+                    Console.WriteLine(@"A backup has been found! Do you want to copy it to the eldenring save directory and then duplicate it? y/n");
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+                    string choice = Console.ReadLine();
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+                    Console.Clear();
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+                    if (choice.ToLower() == "y")
+                    {
+                        File.Copy(backupSourceFilePath, targetFilePath, true);
+                        File.Copy(targetFilePath, sourceFilePath, true);
+                        Console.WriteLine($"{sourceFilePath} created successfully");
+                        Console.WriteLine($"{backupSourceFilePath} duplicated successfully");
+                        File.Copy(backupSourceBakFilePath, targetBakFilePath, true);
+                        File.Copy(targetBakFilePath, sourceBakFilePath, true);
+                        Console.WriteLine($"{sourceBakFilePath} created successfully");
+                        Console.WriteLine($"{backupSourceBakFilePath} duplicated successfully");
+                    }
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+                }
+                else
+                {
+                    Console.WriteLine("No backup has been found! Canceling operation!!!");
+                    Thread.Sleep(1000);
+                }
+            }
+            else
+            {
+                File.Copy(sourceFilePath, targetFilePath, true);
+                Console.WriteLine($"{sourceFilePath} duplicated successfully");
+                File.Copy(sourceBakFilePath, targetBakFilePath, true);
+                Console.WriteLine($"{sourceBakFilePath} duplicated successfully");
+            }
 
 
 
@@ -258,10 +325,18 @@ namespace EldenRingSaveManager
             {
                 throw new Exception("Directory not found");
             }
-            File.Copy($@"{eldenRingSaveDirectory}\{fileName}", filePath, true);
-            Console.WriteLine($@"{eldenRingSaveDirectory}\{fileName} copied successfully");
-            File.Copy($@"{eldenRingSaveDirectory}\{bakFileName}", bakFilePath, true);
-            Console.WriteLine($@"{eldenRingSaveDirectory}\{bakFileName} copied successfully");
+            if (!File.Exists($@"{eldenRingSaveDirectory}\{fileName}") || !File.Exists($@"{eldenRingSaveDirectory}\{bakFileName}"))
+            {
+                Console.WriteLine("Files do not exist!");
+                Thread.Sleep(1000);
+            }
+            else
+            {
+                File.Copy($@"{eldenRingSaveDirectory}\{fileName}", filePath, true);
+                Console.WriteLine($@"{eldenRingSaveDirectory}\{fileName} copied successfully");
+                File.Copy($@"{eldenRingSaveDirectory}\{bakFileName}", bakFilePath, true);
+                Console.WriteLine($@"{eldenRingSaveDirectory}\{bakFileName} copied successfully");
+            }
 
             Console.Write("Press anything to continue....");
             Console.ReadKey();
