@@ -10,6 +10,10 @@ This is a simple console application designed to manage save files for the game 
 - **Duplicate Save Files**: Duplicate `.sl2` save files to `.co2` (and vice versa) within the save directory.
 - **Automated Directory Management**: Automatically identifies and handles the Elden Ring save file directory based on the user's system configuration.
 
+## Requirements
+
+- **.[NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+
 ## Installation
 
 1. **Clone the Repository**:
