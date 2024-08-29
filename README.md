@@ -38,15 +38,21 @@ This is a simple console application designed to manage save files for the game 
 
 When you run the program, you'll be presented with a menu that allows you to perform several operations:
 
-1. **Make a copy of your `.sl2` save into your Backup directory**: This option will copy the current `.sl2` save file to a backup directory located at `C:\Users\<YourUsername>\AppData\Roaming\EldenRingSaveBackUp`.
+1. **Backup your `.sl2` save files to the Backup Directory**: This option will copy the current `.sl2` save files to a backup directory located at `C:\Users\<YourUsername>\AppData\Roaming\EldenRingSaveBackUp`.
 
-2. **Make a copy of your `.co2` save into your Backup directory**: Similar to the `.sl2` option but for `.co2` files.
+2. **Backup your `.co2` save files to the Backup Directory**: Similar to the `.sl2` option but for `.co2` files.
 
-3. **Add `.co2` in your savefile directory**: Duplicates the `.sl2` save file to `.co2` within the Elden Ring save directory.
+3. **Duplicate `.sl2` save files to `.co2` in the game directory**: This option duplicates the `.sl2` save files and renames them to `.co2` in the Elden Ring save directory.
 
-4. **Add `.sl2` in your savefile directory**: Duplicates the `.co2` save file to `.sl2` within the Elden Ring save directory.
+4. **Duplicate `.co2` save files to `.sl2` in the game directory**: This option duplicates the `.co2` save files and renames them to `.sl2` in the Elden Ring save directory.
 
-5. **Exit**: Closes the program.
+5. **Restore `.sl2` save files from the Backup Directory to the game directory**: This option restores `.sl2` save files from the backup directory back to the game directory.
+
+6. **Restore `.co2` save files from the Backup Directory to the game directory**: This option restores `.co2` save files from the backup directory back to the game directory.
+
+7. **Show Additional Information**: Displays additional information about the save files, such as the last time they were accessed.
+
+8. **Exit**: Closes the program.
 
 ### Backup Directory
 
