@@ -74,4 +74,8 @@ This project is licensed under the **GNU Affero General Public License (AGPL) Ve
 
 Created by [wheezyrs](https://github.com/wheezyrs).
 
+## Social medias
+
+[Youtube](https://www.youtube.com/@Wheezyrs)
+[X](https://x.com/wheezyrs_)
 ---
