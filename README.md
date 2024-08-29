@@ -76,7 +76,7 @@ Created by [wheezyrs](https://github.com/wheezyrs).
 
 ## Social medias
 
-[YOUTUBE](https://www.youtube.com/@Wheezyrs)
+[YouTube](https://www.youtube.com/@Wheezyrs)
 
 [X](https://x.com/wheezyrs_)
 
