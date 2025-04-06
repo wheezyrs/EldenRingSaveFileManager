@@ -346,7 +346,7 @@ namespace EldenRingSaveManager
 
         private static void FindEldenRingSaveDirectory(out string eldenRingSaveDirectory, out bool directoryExists)
         {
-            string[] subDirectories = Directory.GetDirectories(@$"C:\Users\Wheezy\AppData\Roaming\EldenRing");
+            string[] subDirectories = Directory.GetDirectories(@$"C:\Users\{currentUserName}\AppData\Roaming\EldenRing");
             eldenRingSaveDirectory = string.Empty;
             directoryExists = LocateSaveFileDirectory(subDirectories, ref eldenRingSaveDirectory);
         }

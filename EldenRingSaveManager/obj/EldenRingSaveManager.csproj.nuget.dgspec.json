@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\EldenRingSaveManager.csproj": {}
+    "C:\\Users\\Filip\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\EldenRingSaveManager.csproj": {}
   },
   "projects": {
-    "E:\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\EldenRingSaveManager.csproj": {
+    "C:\\Users\\Filip\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\EldenRingSaveManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\EldenRingSaveManager.csproj",
+        "projectUniqueName": "C:\\Users\\Filip\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\EldenRingSaveManager.csproj",
         "projectName": "EldenRingSaveManager",
-        "projectPath": "E:\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\EldenRingSaveManager.csproj",
-        "packagesPath": "C:\\Users\\Wheezy\\.nuget\\packages\\",
-        "outputPath": "E:\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\obj\\",
+        "projectPath": "C:\\Users\\Filip\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\EldenRingSaveManager.csproj",
+        "packagesPath": "C:\\Users\\Filip\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Filip\\GitHub\\EldenRingSaveFileManager\\EldenRingSaveManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Wheezy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Filip\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -65,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
